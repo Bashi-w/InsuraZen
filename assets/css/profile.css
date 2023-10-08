@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+    --color-default: #212529;
+    --color-default-rgb: 33, 37, 41;
+    --color-background: #ffffff;
+    --color-background-rgb: 255, 255, 255;
+    --color-primary: #009961;
+    --color-primary-rgb: 0, 153, 97;
+    --color-secondary: #32353a;
+    --color-secondary-rgb: 50, 53, 58;
+    --color-box-background: #ffffff;
+    --color-box-background-rgb: 255, 255, 255;
+    --color-inverse: #ffffff;
+    --color-inverse-rgb: 255, 255, 255;
+    --primary-bg-dark: #1f1f1f;      /* Dark mode background color */
+    --secondary-bg-dark: #121212;
+    --secondary-bg-dark-lighter: #2e2e2e;
+    --primary-text-dark: #ffffff; 
+    --secondary-text-dark: rgb(197, 197, 200);
+  }
+
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+
+.container{
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2em;
+}
+.profile, .bookmarks{
+    text-align: center;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    height: 27em;
+    position: relative;
+}
+
+.bookmarks{
+    height: fit-content;
+}
+
+.profile .detail span{
+    font-weight: bolder;
+}
+
+.profile button{
+    position: absolute;
+    bottom: 2em;
+    right: 1em;
+}
+.profile img{
+    height: 6em;
+}
+
+
+#name {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.detail {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    grid-gap: auto;
+    
+}
+
+.detail i{
+    font-style: normal;
+}
+
+.bi-house-fill {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.status-green{
+    color: green !important;
+}
+
+
+/* The modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.modal-header{
+    
+}
+
+/* Close button */
+.close {
+    color: #9a9a9a;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #f44336;
+}
+
+/* Style for headers */
+.modal-content p b {
+    color: #333;
+    font-size: 18px;
+}
+
+/* Style for icons */
+.modal-content p span i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: var(--color-primary);
+}
+
+/* Style for strong elements */
+.modal-content p strong {
+    font-weight: bold;
+}
+
+/* Style for media and documents */
+.modal-content p strong:after {
+    content: ":";
+}
+
+/* Style for links */
+.modal-content a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+
+table tr{
+    cursor: pointer;
+}
+
+#modalMedia, #modalDocuments{
+    display: flex;
+    justify-content: space-between;
+    grid-gap: auto;
+}
+
+#modalMedia div, #modalDocuments div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#modalMedia div a, #modalDocuments div a{
+    font-size: 0.9em;
+}
+
+.bi-file-earmark, .bi-card-image{
+    font-size: 2em;
+}
+
+.policy-container{
+    display: flex;
+    grid-gap: 2em;
+    margin-bottom: 5%;
+}
+.policy-card{
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 1em;
+    width: 12em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    /* height: 14em; */
+}
+
+.policy-card i{
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 4%;
+}
+.bi-arrow-right-circle{
+    position: absolute;
+    bottom: 0;
+    right: 1em;
+}
+.history{
+    padding: 1em;
+}
+.history i{
+    font-size: 2em;
+    margin-bottom: 5%;
+}
+
+  /*Mobile Screen*/
+@media screen and (max-width: 570px) {
+    .container{
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .modal-content {    
+        margin: 20% auto;
+    }
+    .profile{
+        margin-top: 20%;
+    }
+}
+
+.policy-btn{
+    width: 100%;
+}
+
+/* Style for the saved plans list */
+#savedPlansList {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* Style for each list item (saved plan) */
+  #savedPlansList li {
+    cursor: pointer;
+    background-color: #fff; /* Background color */
+    padding: 10px; /* Padding around each item */
+    margin-bottom: 10px; /* Spacing between items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.2s; /* Add a smooth transition effect on hover */
+  }
+  
+  /* Hover effect */
+  #savedPlansList li:hover {
+    transform: translateY(-5px); /* Move the item up on hover */
+  }
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  
+  }
+
+tbody tr {
+    border-bottom: 1px solid #ddd; /* Subtle bottom border for table rows */
+  }
+  
+
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+
+
+    /*Dark Mode*/
+  @media (prefers-color-scheme: dark) {
+    body{
+        background-color: var(--secondary-bg-dark);
+    }
+
+    .profile, .bookmarks{
+        background-color: var(--primary-bg-dark);
+        border: none;
+    }
+    .modal-content {
+        background-color: var(--primary-bg-dark);
+        border: none;
+    }
+    .modal-heading{
+        color: var(--primary-text-dark);
+    }
+
+    .policy-card{
+        background-color: var(--primary-bg-dark);
+    }
+
+    #claim-tbl{
+        background-color: #121212 !important;
+    }
+    lord-icon{
+        background-color: var(--secondary-bg-dark-lighter);
+        border-radius: 50%;
+    }
+
+    #savedPlansList li {
+        background-color: var(--secondary-bg-dark); 
+      }
+      
+  }

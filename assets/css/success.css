@@ -1,0 +1,82 @@
+:root {
+    --color-default: #212529;
+    --color-default-rgb: 33, 37, 41;
+    --color-background: #ffffff;
+    --color-background-rgb: 255, 255, 255;
+    --color-primary: #009961;
+    --color-primary-rgb: 0, 153, 97;
+    --color-secondary: #32353a;
+    --color-secondary-rgb: 50, 53, 58;
+    --color-box-background: #ffffff;
+    --color-box-background-rgb: 255, 255, 255;
+    --color-inverse: #ffffff;
+    --color-inverse-rgb: 255, 255, 255;
+    --primary-bg-dark: #1f1f1f;      /* Dark mode background color */
+    --secondary-bg-dark: #121212;
+    --secondary-bg-dark-lighter: #2e2e2e;
+    --primary-text-dark: #ffffff; 
+    --secondary-text-dark: rgb(197, 197, 200);
+  }
+
+body {
+  text-align: center;
+  padding: 40px 0;
+  background: #EBF0F5;
+}
+  h1 {
+    color: #419d67;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #404F5E;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-size:20px;
+    margin: 0;
+  }
+lord-icon {
+  color: #9ABC66;
+  width: 10em;
+  height: 10em;
+  margin-left:-15px;
+  margin: 10%;
+}
+.card {
+  background: white;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #C8D0D8;
+  display: inline-block;
+  margin: auto;
+  width: 80%;
+}
+
+  /*Mobile Screen*/
+@media only screen and (max-width: 767px) {
+  .card{
+    width: 80%;
+    
+  }
+  body{
+    margin: 45% auto;
+  }
+}
+
+  /*Dark Mode*/
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: var(--primary-bg-dark);
+    }
+
+    .card{
+        background-color: var(--secondary-bg-dark);
+        border: none;
+        box-shadow: none;
+    }
+    p{
+        color: var(--secondary-text-dark);
+    }
+}

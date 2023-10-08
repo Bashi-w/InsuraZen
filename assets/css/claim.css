@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    display: grid;
+    
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input, textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+
+  .claim-top{
+    margin: 2em auto;
+    display: none;
+  }
+  
+
+  .form-container{
+    padding: 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+  }
+
+  .form-container img{
+    width: 100%;
+    margin: 0;
+    
+    
+  }
+
+  .form-container .title{
+    margin-top: 5%;
+    padding: 1em;
+    text-align: justify;
+  }
+
+  .form-container .img{
+    background-color: #fafafa;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .claim-h {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: var(--color-primary);
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color: var(--color-primary);
+    color: #f3f3f3;
+  }
+  
+  /* Form */
+  .form {
+    width: 100%;
+    margin: 0 auto;
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    padding: 4em;
+  }
+
+  /*Mobile Screen*/
+  @media only screen and (max-width: 767px) {
+    .form {
+        margin: 0 0.6em;
+        padding: 1.2em;
+      }
+
+      
+  .form-container{
+    display: flex;
+    padding: 0;
+    
+  }
+
+  .form-container .img{
+    display: none;
+  }
+
+  .claim-top{
+    display: block;
+  }
+  }
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+    /*Animation*/
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--color-primary);
+  }
+
+  #header{
+    border-bottom: 2px solid rgb(231, 231, 231);
+    background-color: #ffffff;
+  }
+
+    /*Dark Mode*/
+  @media (prefers-color-scheme: dark) {
+
+    #header{
+        background-color: #121212;
+        border-bottom: none;
+        color: white;
+    }
+
+    .navmenu ul {
+      background-color:#121212;
+    }
+
+    .header .logo h1{
+        color: white;
+    }
+
+    .navmenu a{
+        color: white;
+    }
+
+    body{
+        background-color: #282828;
+    }
+
+    form{ 
+        background-color: #141414;
+        
+    } 
+
+    label, .claim-h{
+        color: ghostwhite;
+    }
+    
+    strong{
+         color: powderblue; 
+    }
+    input,textarea{
+        background-color: #282828;
+        border: 1px solid #282828;
+        color: ghostwhite;
+    }
+
+    
+  .claim-h {
+    font-weight:500;
+  }
+
+  .footer{
+    background-color: black;
+    color: ghostwhite;
+  }
+
+  .footer .footer-about p {
+    color: ghostwhite;
+  }
+  
+  .footer .social-links a {
+   
+    color: ghostwhite;
+    
+  }
+
+  .footer .footer-links ul a {
+    color: white;
+}
+
+.footer .copyright {
+    background-color: #282828;
+}
+
+.form-container .img{
+  background-color: #282828;
+}
+  
+}
+
+#find-me{
+  margin-top: 2%;
+  background-color: ghostwhite;
+  color: black;
+  cursor: pointer;
+  padding: 1em;
+}
+#map-link{
+  margin-left: 1%;
+}
