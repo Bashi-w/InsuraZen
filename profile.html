@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>My InsuraZen</title>
+  <meta content="Insurance website" name="description">
+  <meta content="Insurance, Life, Policy" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="manifest" href="./manifest.json">
+<link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/profile.css" rel="stylesheet">
+
+</head>
+
+<body  data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center" >
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo-nobg.webp" alt="logo" height="80px" width="80px">
+        <h1>InsuraZen</h1>
+        <span>.</span>
+      </a>
+
+      <!-- Nav Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li class="dropdown has-dropdown" id="language-selector"><a href="#"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dd-box-shadow">
+              <li><a href="./retirement.html">Retirement</a></li>
+              <li><a href="./motor.html">Motor</a></li>
+              <li><a href="./protection.html">Protection</a></li>
+              <li><a href="./health.html">Health Care</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="my-insurazen-link" class="active">My InsuraZen</a></li>
+          
+          
+          
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav><!-- End Nav Menu -->
+
+      <a class="btn-claim" href="./otp.html">Make Claim</a>
+      
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main>
+
+    <div class="container">
+      <div class="side">
+        <div class="profile">
+          <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/dxjqoygy.json"
+              trigger="hover"
+              colors="primary:#121331,secondary:#08a88a"
+              style="width:100px;height:100px">
+          </lord-icon>
+          <br>
+          <p id="name"></p>
+          <br>
+          <div class="detail">
+              <i class="bi bi-person-circle">    <span>NIC: </span></i>
+              <p id="nic"></p>
+          </div>
+          <div class="detail">
+              <i class="bi bi-house-fill">    <span>Address: </span></i>
+              <p id="address"></p>
+          </div>
+          <div class="detail">
+              <i class="bi bi-telephone-fill">    <span>Mobile: </span></i>
+              <p id="mobile"></p>
+          </div>
+          <div class="detail">
+              <i class="bi bi-envelope-at-fill">    <span>Email: </span></i>
+              <p id="email"></p>
+          </div>
+          <button id="logoutButton">Logout</button>
+
+          
+        </div>
+        <br>
+        <div class="bookmarks">
+          <h3><b>Saved Plans</b></h3>
+          <br>
+          <ul id="savedPlansList"></ul>
+        </div>
+      </div>
+        
+        <div class="pandc">
+            <div class="policies">
+                <p><b>MY POLICIES</b></p>
+                <div class="policy-container" id="policy-container">
+                  <!--Policies loaded dynamically-->
+
+                </div>
+            </div>
+            <div class="claims">
+                <p><b>MY CLAIMS</b></p>
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Claim ID</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="claim-table-body">
+                      <!-- Students will be dynamically added here -->
+                  </tbody>
+                  </table> 
+            </div>
+
+            <!-- claim details modal -->
+
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close" id="closeModal">&times;</span>
+                  <p class="modal-headng"><b>CLAIM DETAILS</b></p>
+                </div>
+                <br>
+                  <div>
+                      <p><span><i class="bi bi-list-ol"></i></span> <strong>Claim ID:</strong> <span id="modalClaimId"></span></p>
+
+                      <p><span><i class="bi bi-list-check"></i></span> <strong>Policy Number:</strong> <span id="modalPolicy"></span></p>
+
+                      <p><span><i class="bi bi-stoplights"></i></span> <strong>Claim Status:</strong> <span id="modalStatus"></span></p>
+
+                      <!-- <p>Incident Details</p> -->
+                      <p><span><i class="bi bi-calendar2-event"></i></span> <strong>Date:</strong> <span id="modalDate"></span></p>
+
+                      <p><span><i class="bi bi-clock"></i></span> <strong>Time:</strong> <span id="modalTime"></span></p>
+
+                      <p><span><i class="bi bi-geo-alt-fill"></i></span> <strong>Location:</strong> <span id="modalLocation"></span></p>
+
+                      <p><span><i class="bi bi-chat-left-text"></i></span> <strong>Description:</strong> <span id="modalDesc"></span></p>
+
+                      <p><span><i class="bi bi-chat"></i></span> <strong>Addtional Comments:</strong> <span id="modalComment">None</span></p>
+                      <!-- Media display -->
+            <p><strong>Media</strong></p>
+            <div id="modalMedia"></div>
+
+            <br>
+            <!-- Documents display -->
+            <p><strong>Documents</strong></p>
+            <div id="modalDocuments"></div>
+                     
+                  </div>
+              </div>
+            </div>         
+        </div>
+        
+
+    </div>
+    
+  </main>
+
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  
+
+  <script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyAIOwX6ilFcgRhbBeaV8Ds_ijOOh6Iq-48",
+  authDomain: "insurazen-cab4e.firebaseapp.com",
+  projectId: "insurazen-cab4e",
+  storageBucket: "insurazen-cab4e.appspot.com",
+  messagingSenderId: "1029999099896",
+  appId: "1:1029999099896:web:fb6b223fbaf88a7af7200d",
+  measurementId: "G-JYTM4ZM4S4"
+  };
+
+
+  firebase.initializeApp(firebaseConfig);
+
+
+// Get a reference to the "Logout" button by its ID
+const logoutButton = document.getElementById("logoutButton");
+
+// Add a click event listener to the button
+logoutButton.addEventListener("click", function () {
+  confirmLogout();
+});
+
+// Function to display the confirmation dialog
+function confirmLogout() {
+  const logoutConfirmed = confirm("Are you sure you want to logout?");
+  if (logoutConfirmed) {
+    // User confirmed, proceed with the logout
+    firebase.auth().signOut()
+      .then(function () {
+        window.location.href = "index.html"; 
+      })
+      .catch(function (error) {
+        // An error happened.
+        console.error("Error during logout:", error);
+      });
+  }
+}
+
+// Function to load saved plans and display them in the list
+function loadSavedPlans() {
+  // Initialize the plans array from local storage
+  let savedPlans = [];
+  if ("savedPlans" in localStorage) {
+    savedPlans = JSON.parse(localStorage.getItem("savedPlans"));
+  }
+
+  // Get the <ul> element where saved plans will be displayed
+  const savedPlansList = document.getElementById("savedPlansList");
+
+  // Loop through saved plans and create list items to display them
+  savedPlans.forEach(savedPlan => {
+    const listItem = document.createElement("li");
+    
+    // Create an anchor element with the plan name as text content and the link as the href
+    const planLink = document.createElement("a");
+    planLink.textContent = savedPlan.planName;
+    planLink.href = savedPlan.planLink; // Set the link
+
+    // Append the anchor element to the list item
+    listItem.appendChild(planLink);
+
+    // Append the list item to the <ul>
+    savedPlansList.appendChild(listItem);
+  });
+}
+
+// Call the function to load saved plans when the page loads
+window.addEventListener("load", loadSavedPlans);
+
+
+  </script>
+  <script src="assets/js/profile.js"></script>
+</body>
+
+</html>
