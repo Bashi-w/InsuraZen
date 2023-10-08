@@ -1,0 +1,40 @@
+{
+    "testimonials": [
+      {
+        "name": "Saul Goodman",
+        "position": "Ceo & Founder",
+        "image": "assets/img/testimonials/testimonials-1.webp",
+        "rating": 5,
+        "quote": "InsuraZen provided me with a policy that perfectly suits my needs. Their expertise and customer service are unmatched."
+      },
+      {
+        "name": "Sara Wilsson",
+        "position": "Designer",
+        "image": "assets/img/testimonials/testimonials-2.webp",
+        "rating": 5,
+        "quote": "I had a complex claim, and the Insurazen team was with me every step of the way. Their support was invaluable."
+      },
+      {
+        "name": "Jena Karlis",
+        "position": "Store Owner",
+        "image": "assets/img/testimonials/testimonials-3.webp",
+        "rating": 4,
+        "quote": "I've been a loyal customer for years. The peace of mind their policies offer is worth every penny."
+      },
+      {
+        "name": "Matt Brandon",
+        "position": "Freelancer",
+        "image": "assets/img/testimonials/testimonials-4.webp",
+        "rating": 5,
+        "quote": "InsuraZen helped me navigate the confusing world of health insurance and find a plan that fits my family perfectly."
+      },
+      {
+        "name": "John Larson",
+        "position": "Entrepreneur",
+        "image": "assets/img/testimonials/testimonials-5.webp",
+        "rating": 5,
+        "quote": "Thanks to their retirement solutions, I'm now enjoying my retirement with financial security and confidence. Highly recommended!"
+      }
+    ]
+  }
+  
