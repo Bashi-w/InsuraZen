@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>InsuraZen : Make Your Claim</title>
+  <meta content="Insurance website" name="description">
+  <meta content="Insurance, Life, Policy" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/claim.css" rel="stylesheet">
+  <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+
+
+</head>
+
+<body class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header sticky-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo-nobg.png" alt="logo">
+        <h1>InsuraZen</h1>
+        <span>.</span>
+      </a>
+
+      <!-- Nav Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#why-us">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li class="dropdown has-dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dd-box-shadow">
+              <li><a href="./retirement.html">Retirement</a></li>
+              <li><a href="./motor.html">Motor</a></li>
+              <li><a href="./protection.html">Protection</a></li>
+              <li><a href="./health.html">Health Care</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="my-insurazen-link">My InsuraZen</a></li>
+          
+          
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav><!-- End Nav Menu -->
+      
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+   
+    <div class="claim-top">
+      <h1 class="claim-h">File your claim</h1>
+
+    </div>
+    
+
+    <br>
+    <div class="form-container">
+      <div class="img">
+        <div class="title">
+          <h1 class="claim-h">File your claim</h1>
+          <br>
+          <p>Life is unpredictable, and when unexpected events happen, we've got your back. Our "Make a Claim" feature simplifies the process of filing insurance claims. With just a few easy steps, you can submit your claim quickly and efficiently. <br> <br>Trust us to provide the support you need when it matters most.</p>
+        </div>
+        <center>
+          <lord-icon
+              src="https://cdn.lordicon.com/flcinbhn.json"
+              trigger="hover"
+              colors="primary:#4be1ec,secondary:#cb5eee"
+              style="width:250px;height:250px">
+          </lord-icon>
+        </center>
+        
+      </div>
+      
+      <form action="#" class="form" id="claimForm">
+        <!-- Progress bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div> 
+          <div
+            class="progress-step progress-step-active"
+            data-title="Personal"></div>
+          <div class="progress-step" data-title="Claim Details"></div>
+          <div class="progress-step" data-title="Additional"></div>
+        </div>
+  
+        <!-- Steps -->
+        <div class="form-step form-step-active">
+            <div class="input-group">
+                <label for="nic" >NIC</label>
+                <input type="text"  name = "nic" id="nic" placeholder="XXXXXXXXXXX" >
+            </div>
+            <div class="input-group">
+                <label for="pnum" >Policy Number</label>
+                <input type="text" name = "pnum" id="pnum" placeholder="Enter the reference number of policy for this claim" >
+            </div>
+            <div class="input-group">
+                <label for="email" >Email address</label>
+                <input type="email" name = "email" id="email" placeholder="name@example.com" >
+            </div>
+            <div class="">
+                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+            </div>
+        </div>
+
+        <div class="form-step">
+          <div class="input-group">
+            <label for="date">Date of incident</label>
+                <input type="date"  name = "date" id="date" placeholder="" max="" >
+          </div>
+          <div class="input-group">
+            <label for="time" >Time of incident</label>
+            <input type="time" name = "time" id="time" placeholder="" >
+          </div>
+          <div class="input-group">
+            <label for="location" >Location of incident</label>
+            <input type="text" name = "location" id="location" placeholder="Enter location of incident" >
+            <br>
+            <p id="find-me">Get my location</p>
+            <br>
+            <p id="status"></p>
+            <a id="map-link" target="_blank"></a>
+          </div>
+          <div class="input-group">
+            <label for="description" >Description of incident</label>
+                <textarea type="text" name = "description" id="description" placeholder="Enter a description of incident" ></textarea>
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <div class="input-group">
+            <label for="doc" >Related Documents</label>
+                <input type="file" name = "doc" id="doc" accept=".docx,.pdf" multiple >
+          </div>
+          <div class="input-group">
+            <label for="media" >Photos / Videos</label>
+                <input type="file" name = "media" id="media" accept=".png,.jpg,.jpeg,.mp4" multiple>
+          </div>
+          <div class="input-group">
+            <label for="comment" >Additional Details/Comments</label>
+                <textarea type="date" name = "comment" id="comment" placeholder="Enter any additional comments about incident"></textarea>
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <input type="submit" value="Submit" class="btn" />
+          </div>
+        </div>
+      </form>
+    </div>
+    
+
+    
+
+  </main>
+
+  <br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span>InsuraZen</span>
+            </a>
+            <p>Crafting Security, Cultivating Serenity – Your Insurance Destination.</p>
+            <div id="google_element"></div>
+            <div class="social-links d-flex mt-4">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+            
+          </div>
+  
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#why-us">About us</a></li>
+              <li><a href="#products">Proucts</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Products</h4>
+            <ul>
+              <li><a href="./health.html">Health Insurance</a></li>
+              <li><a href="./protection.html">Protection</a></li>
+              <li><a href="./retirement.html">Retirement</a></li>
+              <li><a href="./motor.html">Motor Insurance</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>542 Peradeniya Rd,</p>
+            <p>Kandy, Sri Lanka</p>
+            <p class="mt-4"><strong>Phone:</strong> <span>+94 764 671 129</span></p>
+            <p><strong>Email:</strong> <span>info@insurazen.com</span></p>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="container copyright text-center mt-4">
+        <p>&copy; <span>Copyright</span> <strong class="px-1">InsuraZen</strong> <span>All Rights Reserved</span></p>
+      </div>
+  
+    </footer><!-- End Footer -->
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--Google Translate API-->
+  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firestore.js"></script>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/claim.js"></script>
+  <script src="assets/js/my-insurazen.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+
+
+</body>
+
+</html>
