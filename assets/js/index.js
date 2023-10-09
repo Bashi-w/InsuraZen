@@ -33,7 +33,7 @@ categoriesRef.get().then((querySnapshot) => {
     // <a href="/category-details.html?id=${encodeURIComponent(doc.id)}" style="color:black">
     // Create the content for the div
     categoryDiv.innerHTML = `
-    <a href="./${data.link}" style="color:black">
+    <a href="/InsuraZen/${data.link}" style="color:black">
         <div class="icon-box">
           <i class="${data.icon}"></i>
           <h3>${data.name}</h3>
